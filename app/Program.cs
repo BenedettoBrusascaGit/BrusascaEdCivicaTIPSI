@@ -84,8 +84,10 @@ namespace BrusascaEdCivicaTIPSI
                     if(n%2 == 0 )
                     {
                         Console.WriteLine("pari");
+                        risultato =  calcValore(s, n);
                     }else{
                         Console.WriteLine("dispari");
+                        risultato =  calcValore_4(s, n);
                     }
 
                     if(risultato == "")
