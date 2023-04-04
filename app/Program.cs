@@ -29,7 +29,6 @@ namespace BrusascaEdCivicaTIPSI
                     else{
                         Console.WriteLine(risultato);
                     }
-
                     break;
                 case 2: 
                     Console.WriteLine("Inserisci la stringa da decifrare: ");
@@ -45,7 +44,21 @@ namespace BrusascaEdCivicaTIPSI
                     else{
                         Console.WriteLine(risultato);
                     }
+                    break;
+                case 3: 
+                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci la chaive di cifratura: ");
+                    n = int.Parse(Console.ReadLine());
 
+                    risultato = calcValore(s, n);
+                    if(risultato == "")
+                    {
+                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                    }
+                    else{
+                        Console.WriteLine(risultato);
+                    }
                     break;
             }
         }
@@ -87,6 +100,13 @@ namespace BrusascaEdCivicaTIPSI
                     risultato += c;
                 }
             }
+            return risultato;
+        }
+
+        public static string calcValore(string s, int n)
+        {
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            string risultato = "";
             return risultato;
         }
     }
