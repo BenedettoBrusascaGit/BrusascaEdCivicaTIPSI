@@ -18,10 +18,26 @@ namespace BrusascaEdCivicaTIPSI
                 case 1: 
                     Console.WriteLine("Inserisci la stringa da cifrare: ");
                     s = Console.ReadLine();
-                    Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
+                    Console.WriteLine("Inserisci la chiave di cifratura: ");
                     n = int.Parse(Console.ReadLine());
 
                     risultato = Cifratura(s, n);
+                    if(risultato == "")
+                    {
+                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                    }
+                    else{
+                        Console.WriteLine(risultato);
+                    }
+
+                    break;
+                case 2: 
+                    Console.WriteLine("Inserisci la stringa da decifrare: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci la chaive di decifratura: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    risultato = Decifratura(s, n);
                     if(risultato == "")
                     {
                         Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
@@ -52,6 +68,13 @@ namespace BrusascaEdCivicaTIPSI
                 }
             }
             return risultato;
-        }  
+        }
+
+        public static string Decifratura(string s, int n)
+        {
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            string risultato = "";
+            return risultato;
+        }
     }
 }
