@@ -10,95 +10,103 @@ namespace BrusascaEdCivicaTIPSI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Funzione da eseguire: ");
-            int smistamento = int.Parse(Console.ReadLine());
-            string s="", risultato="";
-            int n=0;
-            switch (smistamento){
-                case 1: 
-                    Console.WriteLine("Inserisci la stringa da cifrare: ");
-                    s = Console.ReadLine();
-                    Console.WriteLine("Inserisci la chiave di cifratura: ");
-                    n = int.Parse(Console.ReadLine());
+            int c = 0, boolRipeti = 0;
+            do{
+                Console.WriteLine("Funzione da eseguire: ");
+                int smistamento = int.Parse(Console.ReadLine());
+                string s="", risultato="";
+                int n=0;
+                switch (smistamento){
+                    case 1: 
+                        Console.WriteLine("Inserisci la stringa da cifrare: ");
+                        s = Console.ReadLine();
+                        Console.WriteLine("Inserisci la chiave di cifratura: ");
+                        n = int.Parse(Console.ReadLine());
 
-                    risultato = Cifratura(s, n);
-                    if(risultato == "")
-                    {
-                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
-                    }
-                    else{
-                        Console.WriteLine("La stringa criptata è: " + risultato);
-                    }
-                    break;
-                case 2: 
-                    Console.WriteLine("Inserisci la stringa da decifrare: ");
-                    s = Console.ReadLine();
-                    Console.WriteLine("Inserisci la chaive di decifratura: ");
-                    n = int.Parse(Console.ReadLine());
+                        risultato = Cifratura(s, n);
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("La stringa criptata è: " + risultato);
+                        }
+                        break;
+                    case 2: 
+                        Console.WriteLine("Inserisci la stringa da decifrare: ");
+                        s = Console.ReadLine();
+                        Console.WriteLine("Inserisci la chaive di decifratura: ");
+                        n = int.Parse(Console.ReadLine());
 
-                    risultato = Decifratura(s, n);
-                    if(risultato == "")
-                    {
-                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
-                    }
-                    else{
-                        Console.WriteLine("La stringa decriptata è: " + risultato);
-                    }
-                    break;
-                case 3: 
-                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
-                    s = Console.ReadLine();
-                    Console.WriteLine("Inserisci la chaive di cifratura: ");
-                    n = int.Parse(Console.ReadLine());
+                        risultato = Decifratura(s, n);
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("La stringa decriptata è: " + risultato);
+                        }
+                        break;
+                    case 3: 
+                        Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                        s = Console.ReadLine();
+                        Console.WriteLine("Inserisci la chaive di cifratura: ");
+                        n = int.Parse(Console.ReadLine());
 
-                    risultato =  calcValore(s, n);
-                    if(risultato == "")
-                    {
-                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
-                    }
-                    else{
-                        Console.WriteLine("Il risultato è: " + risultato);
-                    }
-                    break;
-                case 4: 
-                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
-                    s = Console.ReadLine();
-                    Console.WriteLine("Inserisci la chaive di cifratura: ");
-                    n = int.Parse(Console.ReadLine());
-
-                    risultato =  calcValore_4(s, n);
-                    if(risultato == "")
-                    {
-                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
-                    }
-                    else{
-                        Console.WriteLine("Il risultato è: " + risultato);
-                    }
-                    break;
-                case 5: 
-                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
-                    s = Console.ReadLine();
-                    Console.WriteLine("Inserisci la chaive di cifratura: ");
-                    n = int.Parse(Console.ReadLine());
-
-                    if(n%2 == 0 )
-                    {
-                        Console.WriteLine("pari");
                         risultato =  calcValore(s, n);
-                    }else{
-                        Console.WriteLine("dispari");
-                        risultato =  calcValore_4(s, n);
-                    }
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("Il risultato è: " + risultato);
+                        }
+                        break;
+                    case 4: 
+                        Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                        s = Console.ReadLine();
+                        Console.WriteLine("Inserisci la chaive di cifratura: ");
+                        n = int.Parse(Console.ReadLine());
 
-                    if(risultato == "")
-                    {
-                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
-                    }
-                    else{
-                        Console.WriteLine("Il risultato è: " + risultato);
-                    }
-                    break;
-            }
+                        risultato =  calcValore_4(s, n);
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("Il risultato è: " + risultato);
+                        }
+                        break;
+                    case 5: 
+                        Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                        s = Console.ReadLine();
+                        Console.WriteLine("Inserisci la chaive di cifratura: ");
+                        n = int.Parse(Console.ReadLine());
+
+                        if(n%2 == 0 )
+                        {
+                            Console.WriteLine("pari");
+                            risultato =  calcValore(s, n);
+                        }else{
+                            Console.WriteLine("dispari");
+                            risultato =  calcValore_4(s, n);
+                        }
+
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("Il risultato è: " + risultato);
+                        }
+
+                        c=c+1;
+                        break;
+                }
+            Console.WriteLine("VUOI RIESEGUIRE IL PROGRAMMA?         (\"1\"=ripeti, \"0\"=non ripetere)");
+            boolRipeti = int.Parse(Console.ReadLine());
+
+            }while (boolRipeti == 1);
         }
 
         public static string Cifratura(string s, int n)
