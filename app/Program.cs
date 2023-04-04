@@ -147,7 +147,27 @@ namespace BrusascaEdCivicaTIPSI
         {
             string alfabeto = "abcdefghijklmnopqrstuvwxyz";
             string risultato="";
-            int sommaValStringa= 0;
+            double sommaValStringa= 1;
+            foreach (char c in s)
+            {
+                int posizione = alfabeto.IndexOf(c);
+                if (posizione >= 0)
+                {
+                    posizione = posizione + 1;
+                    sommaValStringa *= posizione;
+                }
+                else
+                {
+                    sommaValStringa += 0;
+                }
+            }
+            sommaValStringa = sommaValStringa / n;
+            int arrotondato = (int)sommaValStringa;
+            if (sommaValStringa > arrotondato)
+            {
+                arrotondato++;
+            }
+            risultato = arrotondato.ToString();
             return risultato;
         }
     }
