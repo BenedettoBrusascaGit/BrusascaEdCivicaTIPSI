@@ -27,7 +27,7 @@ namespace BrusascaEdCivicaTIPSI
                         Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
                     }
                     else{
-                        Console.WriteLine(risultato);
+                        Console.WriteLine("La stringa criptata è: " + risultato);
                     }
                     break;
                 case 2: 
@@ -42,7 +42,7 @@ namespace BrusascaEdCivicaTIPSI
                         Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
                     }
                     else{
-                        Console.WriteLine(risultato);
+                        Console.WriteLine("La stringa decriptata è: " + risultato);
                     }
                     break;
                 case 3: 
@@ -51,13 +51,13 @@ namespace BrusascaEdCivicaTIPSI
                     Console.WriteLine("Inserisci la chaive di cifratura: ");
                     n = int.Parse(Console.ReadLine());
 
-                    risultato = calcValore(s, n);
+                    risultato =  calcValore(s, n);
                     if(risultato == "")
                     {
                         Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
                     }
                     else{
-                        Console.WriteLine(risultato);
+                        Console.WriteLine("Il risultato è: " + risultato);
                     }
                     break;
             }
@@ -77,6 +77,8 @@ namespace BrusascaEdCivicaTIPSI
                 }
                 else
                 {
+                    //nel caso sia presente nella stringa da cifrare un carattere
+                    //non compreso nell'alfabeto, esso verrà trascritto ma senza essere cifrato
                     risultato += c;
                 }
             }
@@ -106,7 +108,23 @@ namespace BrusascaEdCivicaTIPSI
         public static string calcValore(string s, int n)
         {
             string alfabeto = "abcdefghijklmnopqrstuvwxyz";
-            string risultato = "";
+            string risultato="";
+            int sommaValStringa= 0;
+            foreach (char c in s)
+            {
+                int posizione = alfabeto.IndexOf(c);
+                if (posizione >= 0)
+                {
+                    posizione = posizione + 1;
+                    sommaValStringa += posizione;
+                }
+                else
+                {
+                    sommaValStringa += 0;
+                }
+            }
+            sommaValStringa = sommaValStringa * n;
+            risultato = sommaValStringa.ToString();
             return risultato;
         }
     }
