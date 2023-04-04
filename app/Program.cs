@@ -102,6 +102,29 @@ namespace BrusascaEdCivicaTIPSI
 
                         c=c+1;
                         break;
+                    case 7: 
+                        Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                        s = Console.ReadLine();
+
+                        if(c%2 == 0 )
+                        {
+                            Console.WriteLine("pari");
+                            risultato =  calcValore(s, c);
+                        }else{
+                            Console.WriteLine("dispari");
+                            risultato =  calcValore_4(s, c);
+                        }
+
+
+
+                        if(risultato == "")
+                        {
+                            Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                        }
+                        else{
+                            Console.WriteLine("Il risultato è: " + risultato);
+                        }
+                        break;
                 }
             Console.WriteLine("VUOI RIESEGUIRE IL PROGRAMMA?         (\"1\"=ripeti, \"0\"=non ripetere)");
             boolRipeti = int.Parse(Console.ReadLine());
