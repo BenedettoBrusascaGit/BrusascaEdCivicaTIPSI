@@ -75,6 +75,27 @@ namespace BrusascaEdCivicaTIPSI
                         Console.WriteLine("Il risultato è: " + risultato);
                     }
                     break;
+                case 5: 
+                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci la chaive di cifratura: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    if(n%2 == 0 )
+                    {
+                        Console.WriteLine("pari");
+                    }else{
+                        Console.WriteLine("dispari");
+                    }
+
+                    if(risultato == "")
+                    {
+                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                    }
+                    else{
+                        Console.WriteLine("Il risultato è: " + risultato);
+                    }
+                    break;
             }
         }
 
