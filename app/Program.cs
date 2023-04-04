@@ -12,8 +12,8 @@ namespace BrusascaEdCivicaTIPSI
         {
             Console.WriteLine("Funzione da eseguire: ");
             int smistamento = int.Parse(Console.ReadLine());
-            string s, risultato;
-            int n;
+            string s="", risultato="";
+            int n=0;
             switch (smistamento){
                 case 1: 
                     Console.WriteLine("Inserisci la stringa da cifrare: ");
@@ -52,6 +52,21 @@ namespace BrusascaEdCivicaTIPSI
                     n = int.Parse(Console.ReadLine());
 
                     risultato =  calcValore(s, n);
+                    if(risultato == "")
+                    {
+                        Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
+                    }
+                    else{
+                        Console.WriteLine("Il risultato è: " + risultato);
+                    }
+                    break;
+                case 4: 
+                    Console.WriteLine("Inserisci la stringa di cui calcolare il valore: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci la chaive di cifratura: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    risultato =  calcValore_4(s, n);
                     if(risultato == "")
                     {
                         Console.WriteLine("Semaforo rosso, Errore: risultato vuoto");
@@ -125,6 +140,14 @@ namespace BrusascaEdCivicaTIPSI
             }
             sommaValStringa = sommaValStringa * n;
             risultato = sommaValStringa.ToString();
+            return risultato;
+        }
+
+        public static string calcValore_4(string s, int n)
+        {
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            string risultato="";
+            int sommaValStringa= 0;
             return risultato;
         }
     }
